@@ -3,9 +3,9 @@ import axios from 'axios';
 
 export default class Results extends Component {
   constructor(props){
-    super();
+    super(props);
     this.state = {
-      ingredients: 'chicken',
+      ingredients: props.location.state.query,
       recipes: null
     }
   }
@@ -21,7 +21,7 @@ export default class Results extends Component {
   render(){
     return(
       <div>
-        <h1>{this.state.ingredients}</h1>
+        <h1>{this.props.location.state.query}</h1>
         <Recipe recipes= {this.state.recipes} />
       </div>
     )
