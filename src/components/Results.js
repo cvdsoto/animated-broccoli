@@ -13,7 +13,24 @@ export default class Results extends Component {
   }
 
   componentDidMount(){
-    const URL = `https://api.edamam.com/search?q=${this.state.ingredients}&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KEY}&from=0&to=10&diet=${this.state.diet}`;
+    const BASE_URL = 'https://api.edamam.com/search?q='
+    const FILTERS = `${this.state.ingredients}&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KEY}&from=0&to=10`;
+    let URL = BASE_URL + FILTERS;
+
+    console.log('what is diet', this.state.diet);
+    const healthFilters = this.state.health;
+    if (this.state.diet !== ''){
+      console.log('i am inside diet');
+      URL += `&diet=${this.state.diet}`;
+      console.log('i am inside diet', URL);
+    }
+    if (healthFilters.length > 0){
+      console.log('i am inside health');
+      const healthString = healthFilters.join('&health=');
+      URL += '&health=' + healthString;
+      console.log('i am inside health', URL);
+    }
+
     axios.get(URL).then(results => {
       this.setState({recipes: results.data.hits});
       console.log(results.data.hits);
@@ -40,7 +57,7 @@ const Recipe = (props) => {
       <div>
         <img src={result.recipe.image} alt={result.recipe.label} />
         <p>{result.recipe.label}</p>
-        <p>{result.recipe.dietLabels}</p>
+        <p>{result.recipe.dietLabels.join(', ')}</p>
       </div>)}
     </div>
   )
