@@ -7,6 +7,7 @@ export default class Results extends Component {
     this.state = {
       ingredients: props.location.state.query,
       diet: props.location.state.diet,
+      health: props.location.state.health,
       recipes: null
     }
   }
