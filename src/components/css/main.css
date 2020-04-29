@@ -75,7 +75,7 @@ input[type="submit"]:hover {
 .recipe {
   border: .1em solid black;
   border-radius: 1em;
-  padding: 1em;
+  /* padding: 1em; */
   margin: 1em 0;
   cursor: pointer;
 }
@@ -85,9 +85,11 @@ input[type="submit"]:hover {
 }
 
 .recipe img {
-  display: block;
+  /* display: block;
   margin: 0 auto;
-  border-radius: 20%;
+  border-radius: 20%; */
+  border-radius: .9em;
+  width: 100%;
 }
 
 /* media queries */
