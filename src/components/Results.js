@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Header from './Header';
 import axios from 'axios';
 
 export default class Results extends Component {
@@ -33,15 +34,18 @@ export default class Results extends Component {
 
     axios.get(URL).then(results => {
       this.setState({recipes: results.data.hits});
-      console.log(results.data.hits);
+      console.log('axios results', results.data.hits);
     });
   }
 
   render(){
     return(
       <div>
-        <h1>{this.props.location.state.query}, {this.props.location.state.diet}</h1>
-        <Recipe recipes= {this.state.recipes} />
+        <Header />
+        <main>
+          <h3>Results for {this.props.location.state.query}</h3>
+          <Recipe recipes= {this.state.recipes} />
+        </main>
       </div>
     )
   }
@@ -54,7 +58,7 @@ const Recipe = (props) => {
   return(
     <div>
     {props.recipes.map((result) =>
-      <div>
+      <div className="recipe">
         <img src={result.recipe.image} alt={result.recipe.label} />
         <p>{result.recipe.label}</p>
         <p>{result.recipe.dietLabels.join(', ')}</p>

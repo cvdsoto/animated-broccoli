@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Header from './Header';
 import Checkbox from './Checkbox';
 import {Redirect, withRouter} from 'react-router-dom';
 
@@ -76,44 +77,57 @@ class Search extends Component {
     }
     return (
     <div>
-      <form onSubmit={this._handleSubmit}>
-        <label>
-          Ingredients:
-          <input type="search"
-                  onChange={this._handleInput}/>
-        </label>
-        <label>
-          <input type="radio"
-                 value="balanced"
-                 checked={this.state.selectedOption === 'balanced'}
-                 onChange={this._handleOptionChange} /> Balanced
-        </label>
+      <Header />
+      <main>
+        <form onSubmit={this._handleSubmit}>
+        <h3>Add the items in your fridge</h3>
+          <label>
+            <input type="search"
+                   onChange={this._handleInput}
+                   required />
+          </label>
 
-        <label>
-          <input type="radio"
-                 value="high-protein"
-                 checked={this.state.selectedOption === 'high-protein'}
-                 onChange={this._handleOptionChange} /> High-Protein
-        </label>
+          <div className="container">
+            <div className="radiobuttons">
+              <h3>Dietary Filters</h3>
+              <label>
+                <input type="radio"
+                       value="balanced"
+                       checked={this.state.selectedOption === 'balanced'}
+                       onChange={this._handleOptionChange} /> Balanced
+              </label>
 
-        <label>
-          <input type="radio"
-                 value="low-fat"
-                 checked={this.state.selectedOption === 'low-fat'}
-                 onChange={this._handleOptionChange} /> Low-Fat
-        </label>
+              <label>
+                <input type="radio"
+                       value="high-protein"
+                       checked={this.state.selectedOption === 'high-protein'}
+                       onChange={this._handleOptionChange} /> High-Protein
+              </label>
 
-        <label>
-          <input type="radio"
-                 value="low-carb"
-                 checked={this.state.selectedOption === 'low-carb'}
-                 onChange={this._handleOptionChange} /> Low-Carb
-        </label>
+              <label>
+                <input type="radio"
+                       value="low-fat"
+                       checked={this.state.selectedOption === 'low-fat'}
+                       onChange={this._handleOptionChange} /> Low-Fat
+              </label>
 
-        {this.createCheckboxes()}
+              <label>
+                <input type="radio"
+                       value="low-carb"
+                       checked={this.state.selectedOption === 'low-carb'}
+                       onChange={this._handleOptionChange} /> Low-Carb
+              </label>
+            </div>
 
-        <input type="submit" value="Search" />
-      </form>
+            <div className="checkbox">
+              <h3>Health Label Filters</h3>
+              {this.createCheckboxes()}
+            </div>
+          </div>
+
+          <input type="submit" value="Search" />
+        </form>
+      </main>
     </div>
     )
   }
