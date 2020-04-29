@@ -58,7 +58,9 @@ const Recipe = (props) => {
   return(
     <div>
     {props.recipes.map((result) =>
-      <div className="recipe">
+      <div className="recipe"
+           onClick={() =>
+            window.open(result.recipe.url)}>
         <img src={result.recipe.image} alt={result.recipe.label} />
         <p>{result.recipe.label}</p>
         <p>{result.recipe.dietLabels.join(', ')}</p>
