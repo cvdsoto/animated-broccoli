@@ -56,14 +56,15 @@ const Recipe = (props) => {
     return(<div>Loading...</div>);
   }
   return(
-    <div>
+    <div className="recipe-container">
     {props.recipes.map((result) =>
       <div className="recipe"
            onClick={() =>
             window.open(result.recipe.url)}>
         <img src={result.recipe.image} alt={result.recipe.label} />
-        <p>{result.recipe.label}</p>
-        <p>{result.recipe.dietLabels.join(', ')}</p>
+        <p className="name">{result.recipe.label}</p>
+        <p className="details">Diet: {result.recipe.dietLabels.join(', ')}</p>
+        <p className="details">Health: {result.recipe.healthLabels.join(', ')}</p>
       </div>)}
     </div>
   )
