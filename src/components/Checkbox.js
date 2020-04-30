@@ -1,4 +1,5 @@
 import React from 'react';
+// get images from img folder
 import vegan from './img/vegan.svg';
 import vegetarian from './img/vegetarian.svg';
 import sugar from './img/sugar-conscious.svg';
@@ -6,6 +7,7 @@ import peanut from './img/peanut-free.svg';
 import treeNut from './img/tree-nut-free.svg';
 import alcohol from './img/alcohol-free.svg';
 
+//get corresponding icons per health label
 const getIcon = (label) => {
   let icon;
   if (label === 'vegan'){
@@ -24,6 +26,7 @@ const getIcon = (label) => {
   return icon;
 }
 
+// get tooltip text per health label
 const getTooltip = (label) => {
   let tooltip;
   if (label === 'vegan'){

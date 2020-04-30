@@ -7,7 +7,7 @@ class Home extends Component {
     return (
       <div>
         <main>
-          <h2>How does this work?</h2>
+          <h2>How Does This Work?</h2>
           <div className="steps-container">
             <div className="steps">
               <span className="number">1</span>
@@ -22,7 +22,7 @@ class Home extends Component {
               <p>Choose the recipe that you want to try!</p>
             </div>
           </div>
-          <Link to ='/search' className="search-button">Start your Search!</Link>
+          <Link to ='/search' className="search-button">Start Your Search!</Link>
           <img src="https://truffle-assets.imgix.net/96f876c0-fallback-food-video-asset.jpg?auto=compress,format&fm=pjpg&w=1200" alt="food at table"/>
           <p>Cupcake ipsum dolor sit amet. Jujubes topping brownie sugar plum jelly beans sesame snaps candy canes tart chocolate bar. Pudding I love cookie candy canes jelly beans halvah I love liquorice. I love croissant bear claw sweet dragée I love carrot cake brownie halvah.</p>
         </main>

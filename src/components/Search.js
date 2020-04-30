@@ -3,6 +3,7 @@ import Header from './Header';
 import Checkbox from './Checkbox';
 import {Redirect, withRouter} from 'react-router-dom';
 
+//for creation of checkboxes
 const healthOptions = ["vegan", "vegetarian", "sugar-conscious", "peanut-free", "tree-nut-free", "alcohol-free"];
 
 class Search extends Component {
@@ -13,7 +14,7 @@ class Search extends Component {
       ingredients: '',
       selectedOption: '',
       healthOptions: null,
-      checkboxes: healthOptions.reduce(
+      checkboxes: healthOptions.reduce( //creates objects inside array
         (options, option) => ({
           ...options,
           [option]: false
@@ -50,6 +51,7 @@ class Search extends Component {
     let healthFilters = [];
     e.preventDefault();
     this.setState({redirect: true});
+    //only get health labels with value true
     Object.keys(this.state.checkboxes).filter(checkbox => this.state.checkboxes[checkbox]).forEach(checkbox => {
     healthFilters.push(checkbox);
     });

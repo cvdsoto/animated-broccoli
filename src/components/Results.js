@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import Header from './Header';
 import axios from 'axios';
+//images
 import vegan from './img/vegan.svg';
 import vegetarian from './img/vegetarian.svg';
 import sugar from './img/sugar-conscious.svg';
@@ -25,18 +26,13 @@ export default class Results extends Component {
     const FILTERS = `${this.state.ingredients}&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KEY}&from=0&to=12`;
     let URL = BASE_URL + FILTERS;
 
-    console.log('what is diet', this.state.diet);
     const healthFilters = this.state.health;
     if (this.state.diet !== ''){
-      console.log('i am inside diet');
       URL += `&diet=${this.state.diet}`;
-      console.log('i am inside diet', URL);
     }
     if (healthFilters.length > 0){
-      console.log('i am inside health');
       const healthString = healthFilters.join('&health=');
       URL += '&health=' + healthString;
-      console.log('i am inside health', URL);
     }
 
     axios.get(URL).then(results => {
@@ -75,7 +71,6 @@ const getIcon = (labels) => {
       icon.push(<span className="tooltip"><img src={alcohol} className="icons" alt={labels[i]} /><span className="tooltiptext-result">{labels[i]}</span></span>);
     }
   }
-  console.log('here is icon', icon);
   return icon;
 }
 
