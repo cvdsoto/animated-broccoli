@@ -90,32 +90,36 @@ class Search extends Component {
           <div className="container">
             <div className="radiobuttons">
               <h3>Dietary Filters</h3>
-              <label>
+              <label className="rb-container">
                 <input type="radio"
                        value="balanced"
                        checked={this.state.selectedOption === 'balanced'}
                        onChange={this._handleOptionChange} /> Balanced
+                <span className="checkmark"></span>
               </label>
 
-              <label>
+              <label className="rb-container">
                 <input type="radio"
                        value="high-protein"
                        checked={this.state.selectedOption === 'high-protein'}
                        onChange={this._handleOptionChange} /> High-Protein
+                <span className="checkmark"></span>
               </label>
 
-              <label>
+              <label className="rb-container">
                 <input type="radio"
                        value="low-fat"
                        checked={this.state.selectedOption === 'low-fat'}
                        onChange={this._handleOptionChange} /> Low-Fat
+                <span className="checkmark"></span>
               </label>
 
-              <label>
+              <label className="rb-container">
                 <input type="radio"
                        value="low-carb"
                        checked={this.state.selectedOption === 'low-carb'}
                        onChange={this._handleOptionChange} /> Low-Carb
+                <span className="checkmark"></span>
               </label>
             </div>
 

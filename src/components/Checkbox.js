@@ -25,11 +25,12 @@ const getIcon = (label) => {
 }
 
 const Checkbox = ({label, isSelected, onCheckboxChange}) => (
-  <label>
+  <label className="cb-container">
     <input type="checkbox"
         name={label}
         checked={isSelected}
         onChange={onCheckboxChange} />
+    <span className="cb-checkmark"></span>
     <div className="tooltip">
       <img src={getIcon(label)} className="icons" alt={label}/>
       <span className="tooltiptext">"text"</span>
