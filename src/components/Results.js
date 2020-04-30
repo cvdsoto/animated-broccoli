@@ -62,17 +62,17 @@ const getIcon = (labels) => {
   let icon = [];
   for (let i = 0; i < labels.length; i++){
     if (labels[i] === 'Vegan'){
-      icon.push(<span className="tooltip"><img src={vegan} className="icons" alt={labels[i]} /><span className="tooltiptext">{labels[i]}</span></span>);
+      icon.push(<span className="tooltip"><img src={vegan} className="icons" alt={labels[i]} /><span className="tooltiptext-result">{labels[i]}</span></span>);
     } else if( labels[i] === 'Vegetarian') {
-      icon.push(<span className="tooltip"><img src={vegetarian} className="icons" alt={labels[i]} /><span className="tooltiptext">{labels[i]}</span></span>);
+      icon.push(<span className="tooltip"><img src={vegetarian} className="icons" alt={labels[i]} /><span className="tooltiptext-result">{labels[i]}</span></span>);
     } else if( labels[i] === 'Sugar-Conscious') {
-      icon.push(<span className="tooltip"><img src={sugar} className="icons" alt={labels[i]} /><span className="tooltiptext">{labels[i]}</span></span>)
+      icon.push(<span className="tooltip"><img src={sugar} className="icons" alt={labels[i]} /><span className="tooltiptext-result">{labels[i]}</span></span>)
     } else if( labels[i] === 'Peanut-Free') {
-      icon.push(<span className="tooltip"><img src={peanut} className="icons" alt={labels[i]} /><span className="tooltiptext">{labels[i]}</span></span>);
+      icon.push(<span className="tooltip"><img src={peanut} className="icons" alt={labels[i]} /><span className="tooltiptext-result">{labels[i]}</span></span>);
     } else if( labels[i] === 'Tree-Nut-Free') {
-      icon.push(<span className="tooltip"><img src={treeNut} className="icons" alt={labels[i]} /><span className="tooltiptext">{labels[i]}</span></span>);
+      icon.push(<span className="tooltip"><img src={treeNut} className="icons" alt={labels[i]} /><span className="tooltiptext-result">{labels[i]}</span></span>);
     } else if( labels[i] === 'Alcohol-Free') {
-      icon.push(<span className="tooltip"><img src={alcohol} className="icons" alt={labels[i]} /><span className="tooltiptext">{labels[i]}</span></span>);
+      icon.push(<span className="tooltip"><img src={alcohol} className="icons" alt={labels[i]} /><span className="tooltiptext-result">{labels[i]}</span></span>);
     }
   }
   console.log('here is icon', icon);

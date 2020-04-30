@@ -254,7 +254,8 @@ input[type="submit"]:hover {
 }
 
 /* Tooltip text */
-.tooltip .tooltiptext {
+.tooltip .tooltiptext,
+.tooltip .tooltiptext-result {
   visibility: hidden;
   width: 100px;
   background-color: black;
@@ -262,18 +263,24 @@ input[type="submit"]:hover {
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
+  font-size: .5em;
 
-  /* Position the tooltip text - see examples below! */
+  /* Position the tooltip text */
   position: absolute;
   z-index: 1;
 
   bottom: 100%;
   left: 50%;
-  margin-left: -60px;
+  margin-left: -40px;
+}
+
+.tooltip .tooltiptext-result {
+  font-size: 1em;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltiptext,
+.tooltip:hover .tooltiptext-result {
   visibility: visible;
 }
 

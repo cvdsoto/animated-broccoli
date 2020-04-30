@@ -24,6 +24,24 @@ const getIcon = (label) => {
   return icon;
 }
 
+const getTooltip = (label) => {
+  let tooltip;
+  if (label === 'vegan'){
+    tooltip = "No meat, poultry, fish, dairy, eggs or honey";
+  } else if( label === 'vegetarian') {
+    tooltip = "No meat, poultry, or fish";
+  } else if( label === 'sugar-conscious') {
+    tooltip = "Less than 4g of sugar per serving"
+  } else if( label === 'peanut-free') {
+    tooltip = "No peanuts or products containing peanuts";
+  } else if( label === 'tree-nut-free') {
+    tooltip = "No tree nuts or products containing tree nuts";
+  } else if( label === 'alcohol-free') {
+    tooltip = "No alcohol used or contained";
+  }
+  return tooltip;
+}
+
 const Checkbox = ({label, isSelected, onCheckboxChange}) => (
   <label className="cb-container">
     <input type="checkbox"
@@ -33,7 +51,7 @@ const Checkbox = ({label, isSelected, onCheckboxChange}) => (
     <span className="cb-checkmark"></span>
     <div className="tooltip">
       <img src={getIcon(label)} className="icons" alt={label}/>
-      <span className="tooltiptext">"text"</span>
+      <span className="tooltiptext">{getTooltip(label)}</span>
     </div> {label}
   </label>
 );
