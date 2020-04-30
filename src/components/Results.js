@@ -101,6 +101,7 @@ const Recipe = (props) => {
         <p className="details">Diet: {result.recipe.dietLabels.join(', ')}</p>
         <p className="details">{getIcon(result.recipe.healthLabels)}</p>
       </div>)}
+      <Link to ='/search' className="search-button">Search Again</Link>
     </div>
   )
 }
