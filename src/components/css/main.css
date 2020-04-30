@@ -15,8 +15,17 @@ nav {
 }
 
 nav a {
-  margin-top: 1.5em;
+  margin-top: 1.7em;
   text-decoration: none;
+  color: white;
+}
+
+.search-button-nav{
+  color: #ebc819;
+}
+
+.search-button-nav:hover{
+  text-decoration: underline;
 }
 
 main {
@@ -46,11 +55,13 @@ main > p {
   border-radius: 50%;
   line-height: 4em;
   text-align: center;
+  color: #44758A;
+  font-size: 1.3em;
 }
 
-main > a {
-  border: .2em solid #44758A;
-  color: #44758A;
+.search-button {
+  border: .2em solid #ebc819;
+  color: #ebc819;
   width: 100%;
   text-decoration: none;
   display: block;
@@ -62,9 +73,9 @@ main > a {
   font-size: 1.3em;
 }
 
-main > a:hover {
-  background-color: #44758A;
-  color: white;
+.search-button:hover {
+  background-color: #ebc819;
+  color: #44758A;;
 }
 
 main > img{
@@ -267,7 +278,7 @@ input[type="submit"]:hover {
 }
 
 @media (min-width: 640px){
-  main > a {
+  .search-button {
     width: 50%;
     margin: 1em auto;
   }

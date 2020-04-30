@@ -5,7 +5,7 @@ const Header = () => {
   return(
     <nav>
       <h1><Link to="/">Recipe Finder!</Link></h1>
-      <Link to="/search">Search Recipes!</Link>
+      <Link to="/search" className="search-button-nav">Search Recipes!</Link>
     </nav>
   )
 }

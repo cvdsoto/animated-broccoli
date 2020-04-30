@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import Header from './Header';
 import axios from 'axios';
 import vegan from './img/vegan.svg';
@@ -81,6 +82,13 @@ const getIcon = (labels) => {
 const Recipe = (props) => {
   if (props.recipes === null) {
     return(<div>Loading...</div>);
+  } else if (props.recipes.length === 0){
+    return(
+      <div>
+        <p>Sorry! No results to show!</p>
+        <Link to ='/search' className="search-button">Search Again</Link>
+      </div>
+    )
   }
   return(
     <div className="recipe-container">
