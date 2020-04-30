@@ -80,10 +80,16 @@ class Search extends Component {
       <Header />
       <main>
         <form onSubmit={this._handleSubmit}>
-        <h3>Add the items in your fridge</h3>
+          <div className="ingredients-container">
+          <h3>Add the items in your fridge</h3>
+          <span className="ingredients">
+            Separate ingredients by comma and space
+          </span>
+          </div>
           <label className="search">
             <input type="search"
                    onChange={this._handleInput}
+                   placeholder="eggs, cheese"
                    required />
           </label>
 

@@ -90,6 +90,13 @@ form > * {
   display: block;
 }
 
+.ingredients{
+  font-size: .7em;
+  margin-top: -1em;
+  margin-bottom: 1.3em;
+  display:block;
+}
+
 input[type="search"] {
   width: 100%;
   padding: 10px;
@@ -310,20 +317,26 @@ input[type="submit"]:hover {
   nav {
     padding: 0 5em;
   }
-  input[type="submit"], input[type="search"] {
-    width: 50%;
+  .steps-container{
+    display: flex;
+    justify-content: center;
+  }
+  .steps {
+    margin: 1em;
   }
   input[type="submit"] {
     margin: 1em auto;
+    width: 50%;
   }
-  form h3, .search {
-    display: inline;
+  .ingredients-container, .search {
+    display: inline-block;
   }
-  form > h3 {
-    padding-left: 4em;
+ .ingredients-container {
+    width: 30%;
+    margin-left: 4em;
   }
   .search {
-    margin-left: 1em;
+    width: 50%;
   }
   .recipe {
     width: 25%;
