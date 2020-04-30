@@ -81,7 +81,7 @@ class Search extends Component {
       <main>
         <form onSubmit={this._handleSubmit}>
         <h3>Add the items in your fridge</h3>
-          <label>
+          <label className="search">
             <input type="search"
                    onChange={this._handleInput}
                    required />

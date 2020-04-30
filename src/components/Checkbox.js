@@ -30,7 +30,10 @@ const Checkbox = ({label, isSelected, onCheckboxChange}) => (
         name={label}
         checked={isSelected}
         onChange={onCheckboxChange} />
-    <img src={getIcon(label)} className="icons" /> {label}
+    <div className="tooltip">
+      <img src={getIcon(label)} className="icons" alt={label}/>
+      <span className="tooltiptext">"text"</span>
+    </div> {label}
   </label>
 );
 

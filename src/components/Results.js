@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import Header from './Header';
 import axios from 'axios';
+import vegan from './img/vegan.svg';
+import vegetarian from './img/vegetarian.svg';
+import sugar from './img/sugar-conscious.svg';
+import peanut from './img/peanut-free.svg';
+import treeNut from './img/tree-nut-free.svg';
+import alcohol from './img/alcohol-free.svg';
 
 export default class Results extends Component {
   constructor(props){
@@ -15,7 +21,7 @@ export default class Results extends Component {
 
   componentDidMount(){
     const BASE_URL = 'https://api.edamam.com/search?q='
-    const FILTERS = `${this.state.ingredients}&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KEY}&from=0&to=10`;
+    const FILTERS = `${this.state.ingredients}&app_id=${process.env.REACT_APP_ID}&app_key=${process.env.REACT_APP_KEY}&from=0&to=12`;
     let URL = BASE_URL + FILTERS;
 
     console.log('what is diet', this.state.diet);
@@ -51,6 +57,27 @@ export default class Results extends Component {
   }
 }
 
+const getIcon = (labels) => {
+  let icon = [];
+  for (let i = 0; i < labels.length; i++){
+    if (labels[i] === 'Vegan'){
+      icon.push(<img src={vegan} className="icons" alt={labels[i]} />);
+    } else if( labels[i] === 'Vegetarian') {
+      icon.push(<img src={vegetarian} className="icons" alt={labels[i]} />);
+    } else if( labels[i] === 'Sugar-Conscious') {
+      icon.push(<img src={sugar} className="icons" alt={labels[i]} />)
+    } else if( labels[i] === 'Peanut-Free') {
+      icon.push(<img src={peanut} className="icons" alt={labels[i]} />);
+    } else if( labels[i] === 'Tree-Nut-Free') {
+      icon.push(<img src={treeNut} className="icons" alt={labels[i]} />);
+    } else if( labels[i] === 'Alcohol-Free') {
+      icon.push(<img src={alcohol} className="icons" alt={labels[i]} />);
+    }
+  }
+  console.log('here is icon', icon);
+  return icon;
+}
+
 const Recipe = (props) => {
   if (props.recipes === null) {
     return(<div>Loading...</div>);
@@ -64,7 +91,7 @@ const Recipe = (props) => {
         <img src={result.recipe.image} alt={result.recipe.label} />
         <p className="name">{result.recipe.label}</p>
         <p className="details">Diet: {result.recipe.dietLabels.join(', ')}</p>
-        <p className="details">Health: {result.recipe.healthLabels.join(', ')}</p>
+        <p className="details">Health: {getIcon(result.recipe.healthLabels)}</p>
       </div>)}
     </div>
   )
