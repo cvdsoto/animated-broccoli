@@ -21,6 +21,7 @@ h1, h2, h3 {
   font-family: 'Rubik', sans-serif;
   text-transform: capitalize;
 }
+
 nav a {
   margin-top: 1.7em;
   text-decoration: none;
@@ -152,6 +153,7 @@ input[type="search"] {
   width: 0;
 }
 
+/* Customise Radio buttons and Checkboxes */
 .checkmark, .cb-checkmark {
   position: absolute;
   top: 0;
@@ -252,7 +254,7 @@ input[type="search"] {
   width: 2em;
 }
 
-/* tooltip! */
+/* Tooltip! */
 .tooltip {
   position: relative;
   display: inline-block;
@@ -289,6 +291,7 @@ input[type="search"] {
   visibility: visible;
 }
 
+/* Media Queries */
 @media (min-width: 640px){
   .search-button {
     width: 50%;
